@@ -1,0 +1,34 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string>
+#include <locale.h>
+
+using namespace std;
+
+int Soma_do_Dobro(int* A, int* B) // FUNÇÃO PARA CALCULAR A SOMA DOS DOBROS, DE MANEIRA QUE O DOBRO DA VARIAVEL SEJA ARMAZENADO DENTRO DA PRÓPRIA VARIAVEL
+{ 
+    *A = 2*(*A);
+    *B = 2*(*B);
+    int soma = *A + *B;
+
+    return soma;
+}
+
+
+int main(){
+
+    setlocale(LC_ALL, "Portuguese"); // FUNÇÃO PARA IMPRIMIR CORRETAMENTE TEXTOS EM PORTUGUÊS NO COMPILADOR MINGW NO VSCODE
+
+    int* A = new int;
+    int* B = new int;
+    cout << "Digite um número para a variável A: "; cin >> *A;
+    cout << "Digite um número para a variável B: "; cin >> *B;
+
+    cout << "O valor da soma dos dobros dos dois números inseridos é: " << Soma_do_Dobro(A,B);
+        
+    delete A; // } FUNÇÃO DELETE PARA EVITAR FUGA DE MEMÓRIA EM ALOCAÇÃO DINÂMICA DE DADOS
+    delete B; // } 
+
+    return 0;
+}
