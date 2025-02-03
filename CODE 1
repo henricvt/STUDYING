@@ -32,3 +32,7 @@ int main(){
 
     return 0;
 }
+
+/* This code asks for 2 integers, which will be allocated in 2 pointers by dynamic memory allocation.
+With this data, the Sum_do_Dobro function allocates the doubles of each number in the corresponding pointer, 
+and then makes a sum of these new allocated numbers.*/
